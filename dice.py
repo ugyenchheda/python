@@ -1,8 +1,10 @@
 import random
-def dice():
+
+def roll_dice():
+
     dice_drawing = {
         1: (
-            "-----",yes
+            "-----",
             "|   |",
             "| o |",
             "|   |",
@@ -43,5 +45,19 @@ def dice():
             "|o o|",
             "-----",
         ),
-
     }
+    
+    while True:
+        roll = input("Roll the dice? (Yes/No): ").lower()
+        
+        if roll != "yes":
+            break
+        
+        first_dice = random.randint(1, 6)
+        second_dice = random.randint(1, 6)
+
+        print("Dice result is: {} and {}".format(first_dice, second_dice))
+        print("\n".join(dice_drawing[first_dice]))
+        print("\n".join(dice_drawing[second_dice]))
+
+roll_dice()
