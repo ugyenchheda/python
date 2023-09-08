@@ -17,6 +17,7 @@ def my_madlibs():
     verb = input('Enter a verb name : ')
     print('texts will be added here' +adjactive+ ' texts will be added here ' + color+ ' texts will be added here '+thing+ ' texts will be added here ' + place+ ' texts will be added here '+person+ ' texts will be added here '+adjactive1+ ' ' +insect +' .texts will be added here ' +food+ 'texts will be added here '+verb+ 'texts will be added here ' +verb+ '.')
 
+#go on creating function as much as you like as follow
 def my_madlibs_2():
     name= input('Enter a name: ')
     place = input('Enter a place name: ')
@@ -28,6 +29,7 @@ def my_madlibs_2():
     things = input('Enter a thing name: ')
     print('text here ' + food + ', texts will be added here ' + name + ' texts will be added here' + place +'texts will be added here' + animals + ' texts will be added here' + profession + '. texts will be added here ' + things + ' texts will be added here ' + cloth + ' texts will be added here ' + verb + ' texts will be added here')
 
-Button(root, text= 'The Photographer', font ='verdana 15', command= my_madlibs, bg = 'white').place(x=60, y=120)
-Button(root, text= 'apple and apple', font ='verdana 15', command = my_madlibs_2 , bg = 'white').place(x=70, y=180)
+#after the function is created trigger it using command on button.
+Button(root, text= 'One', font ='verdana 15', command= my_madlibs, bg = 'white').place(x=60, y=120)
+Button(root, text= 'Two', font ='verdana 15', command = my_madlibs_2 , bg = 'white').place(x=70, y=180)
 root.mainloop()  
