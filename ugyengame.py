@@ -56,3 +56,12 @@ def moveToLeft(self):
                 if self.board[i][j] != 0 and self.board[i][j] == self.board[i][j+1]:
                     self.board[i][j] *= 2
                     self.board[i][j+1] = 0
+                    
+   #function to reverse the rows of the board                 
+    def reverse(self):
+        new_board = []
+        for i in range(4):
+            new_board.append([])
+            for j in range(4):
+                new_board[i].append(self.board[i][3-j])
+        self.board = new_board
