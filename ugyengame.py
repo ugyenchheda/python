@@ -50,18 +50,26 @@ def moveToLeft(self):
         self.board = new_board
 
 #merge function
-    def merge(self):
-        for i in range(4):
-            for j in range(3):
-                if self.board[i][j] != 0 and self.board[i][j] == self.board[i][j+1]:
-                    self.board[i][j] *= 2
-                    self.board[i][j+1] = 0
-                    
-   #function to reverse the rows of the board                 
-    def reverse(self):
-        new_board = []
-        for i in range(4):
-            new_board.append([])
-            for j in range(4):
-                new_board[i].append(self.board[i][3-j])
-        self.board = new_board
+def merge(self):
+for i in range(4):
+    for j in range(3):
+        if self.board[i][j] != 0 and self.board[i][j] == self.board[i][j+1]:
+            self.board[i][j] *= 2
+            self.board[i][j+1] = 0
+                
+#function to reverse the rows of the board                 
+def reverse(self):
+    new_board = []
+    for i in range(4):
+        new_board.append([])
+        for j in range(4):
+            new_board[i].append(self.board[i][3-j])
+    self.board = new_board
+
+#change the values diagonally
+def transpose(self):
+    new_board = [[0 for col in range(4)] for row in range(4)]
+    for i in range(4):
+        for j in range(4):
+            new_board[i][j] = self.board[j][i]
+    self.board = new_board
