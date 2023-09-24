@@ -85,3 +85,22 @@ def pickNewValue(self):
         self.board[row][col] = 4
     else:
         self.board[row][col] = 2
+
+
+#finally update the the boarc
+def updateGame(self):
+    for i in range(4):
+        for j in range(4):
+            tile_value = self.board[i][j]
+            if tile_value == 0:
+                self.tiles[i][j]["frame"].configure(bg="white")
+                self.tiles[i][j]["number"].configure(bg="white", text="")
+            else:
+                self.tiles[i][j]["frame"].configure(bg="orange")
+                self.tiles[i][j]["number"].configure(
+                    bg="orange",
+                    fg="white",
+                    font="20",
+               text=str(tile_value)
+                )
+        self.update_idletasks()
