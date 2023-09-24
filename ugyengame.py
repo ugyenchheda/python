@@ -73,3 +73,15 @@ def transpose(self):
         for j in range(4):
             new_board[i][j] = self.board[j][i]
     self.board = new_board
+    
+#function that randomly generates row and column number for a random tile that is empty and available for inserting a value.
+def pickNewValue(self):
+    row = col = 0
+    while self.board[row][col] != 0:
+        row = random.randint(0, 3)
+        col = random.randint(0, 3)
+
+    if random.randint(1, 5) == 1:
+        self.board[row][col] = 4
+    else:
+        self.board[row][col] = 2
