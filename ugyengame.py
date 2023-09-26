@@ -148,3 +148,27 @@ def down(self, event):
     self.pickNewValue()
     self.updateGame()
     self.final_result()
+
+#checking the case if the game is over
+def final_result(self):
+    if any(2048 in row for row in self.board):
+        game_over_frame = Frame(self.main_grid, borderwidth=2)
+        game_over_frame.place(relx=0.5, rely=0.5, anchor='center')
+        Label(
+            game_over_frame,
+            text="You Win",
+            bg="green",
+            fg="white",
+            font="20"
+        ).pack()
+
+    elif not any(0 in row for row in self.board) and not self.horizontal_move_exists() and not self.vertical_move_exists():
+        game_over_frame = Frame(self.main_grid, borderwidth=2)
+        game_over_frame.place(relx=0.5, rely=0.5, anchor='center')
+        Label(
+            game_over_frame,
+            text="Game Over",
+            bg="Red",
+            fg="white",
+            font="20"
+        ).pack()
