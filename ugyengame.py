@@ -172,3 +172,27 @@ def final_result(self):
             fg="white",
             font="20"
         ).pack()
+
+class Game(Frame):
+    def __init__(self):
+        Frame.__init__(self)
+        self.grid()
+        self.master.title("2048")
+        self.main_grid = Frame(self, bg='lightgrey', bd=3, width=400,height=400)
+        self.main_grid.grid()
+        
+        #call the functions to run the program
+        self.gameboard()
+        self.start_game()
+
+        self.master.bind("<Left>", self.left)
+        self.master.bind("<Right>", self.right)
+        self.master.bind("<Up>", self.up)
+        self.master.bind("<Down>", self.down)
+
+        self.mainloop()
+def main():
+    Game()
+
+if __name__ == "__main__":
+    main()
