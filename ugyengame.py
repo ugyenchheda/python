@@ -104,3 +104,47 @@ def updateGame(self):
                text=str(tile_value)
                 )
         self.update_idletasks()
+
+#function to merge the elements to the left
+def left(self, event):
+    self.moveToLeft()
+    self.merge()
+    self.moveToLeft()
+    self.pickNewValue()
+    self.updateGame()
+    self.final_result()
+
+#function to merge the elements to the right
+def right(self, event):
+    self.reverse()
+    self.moveToLeft()
+    self.merge()
+    self.moveToLeft()
+    self.reverse()
+    self.pickNewValue()
+    self.updateGame()
+    
+#function to merge the elements to the upwards
+def up(self, event):
+    self.transpose()
+    self.moveToLeft()
+    self.merge()
+    self.moveToLeft()
+    self.transpose()
+    self.pickNewValue()
+    self.updateGame()
+    self.final_result()
+    self.final_result()
+    
+#function to merge the elements to the downwards
+def down(self, event):
+    self.transpose()
+    self.reverse()
+    self.moveToLeft()
+    self.merge()
+    self.moveToLeft()
+    self.reverse()
+    self.transpose()
+    self.pickNewValue()
+    self.updateGame()
+    self.final_result()
