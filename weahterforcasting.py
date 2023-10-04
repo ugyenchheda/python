@@ -69,3 +69,23 @@ def get_weather():
     # Display weather data
     weather_label.config(
         text=f"{weather_data['name']}: {weather_data['main']['temp']}°C")
+
+def get_location_weather():
+    query_params = {
+        "apiKey": IPBASE_API_KEY
+    }
+    response = requests.get(IPBASE_API_ENDPOINT, params=query_params)
+    city_name = response.json()["data"]["location"]["city"]["name"]
+
+    weather_query_params = {
+        'q': city_name,
+        'appid': OPEN_WEATHER_MAP_API_KEY,
+        'units': 'metric'
+    }
+    response = requests.get(
+        OPEN_WEATHER_MAP_API_ENDPOINT, params=weather_query_params)
+    weather_data = response.json()
+
+    # Display weather data
+    weather_label.config(
+        text=f"{weather_data['name']}: {weather_data['main']['temp']}°C")
