@@ -71,4 +71,15 @@ def draw():
 
     ontimer(draw, 50)
 
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+listen()
+onkey(lambda: move(1, 20), 'w')
+onkey(lambda: move(1, -20), 's')
+onkey(lambda: move(2, 20), 'i')
+onkey(lambda: move(2, -20), 'k')
+draw()
+done()
+
 
